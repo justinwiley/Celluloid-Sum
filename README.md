@@ -90,8 +90,8 @@ This includes the cost of actor initialization and tear-down.
     Finished in 1.15 seconds
     14 examples, 0 failures
 
-Iterative sum for large set time: 0.205000
-Celluloid-based (pre-initialized actors) sum for large set time: 0.141000
+Iterative sum for large set time: 0.187000
+Celluloid-based (pre-initialized actors) sum for large set time: 0.094000
 
     jruby-1.6.5 :019 > (0.187000 - 0.094000) / 0.187000 * 100
      => 49.73262032085562
