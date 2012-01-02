@@ -62,34 +62,38 @@ This includes the cost of actor initialization and tear-down.
     ~cell-sum$ ruby -v
     jruby 1.6.5 (ruby-1.9.2-p136) (2011-10-25 9dcd388) (Java HotSpot(TM) 64-Bit Server VM 1.6.0_29) [darwin-x86_64-java]
 
-    ~/cell-sum$ rspec spec/sum_lord_spec.rb 
-    ....
+    ~/cell-sum$ rspec spec/sum_lord_spec.rb
+
+    Small set: 10 x 10
+
+    Large set: 100 x 100
+    .....
     Standard ruby iterative sum: small set
-      0.003000   0.000000   0.003000 (  0.003000)
+      0.002000   0.000000   0.002000 (  0.002000)
     .
     Standard ruby iterative sum: large set
-      0.205000   0.000000   0.205000 (  0.205000)
+      0.187000   0.000000   0.187000 (  0.188000)
     .
     Celluloid-based: small set
-      0.070000   0.000000   0.070000 (  0.070000)
+      0.065000   0.000000   0.065000 (  0.065000)
     .
     Celluloid-based: large set
-      0.278000   0.000000   0.278000 (  0.278000)
+      0.311000   0.000000   0.311000 (  0.311000)
     .
     Celluloid-based (pre-initialized actors): small set
-      0.007000   0.000000   0.007000 (  0.007000)
+      0.006000   0.000000   0.006000 (  0.006000)
     .
     Celluloid-based (pre-initialized actors): large set
-      0.141000   0.000000   0.141000 (  0.141000)
-    .
+      0.094000   0.000000   0.094000 (  0.094000)
+    ....
 
-    Finished in 1.11 seconds
-    10 examples, 0 failures
+    Finished in 1.15 seconds
+    14 examples, 0 failures
 
 Iterative sum for large set time: 0.205000
 Celluloid-based (pre-initialized actors) sum for large set time: 0.141000
 
-    jruby-1.6.5 :019 > (0.205000 - 0.141000) / 0.205000 * 100
-     => 31.2195121951219 #
+    jruby-1.6.5 :019 > (0.187000 - 0.094000) / 0.187000 * 100
+     => 49.73262032085562
 
 
